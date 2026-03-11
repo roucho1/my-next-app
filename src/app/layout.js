@@ -16,6 +16,7 @@ export default function RootLayout({ children }) {
         <nav className="flex gap-6 px-8 py-4 border-b border-gray-200">
           <Link href="/">首頁</Link>
           <Link href="/about">關於我</Link>
+          <Link href="/counter">計數測試</Link>
         </nav>
         <main className="max-w-3xl mx-auto p-8">{children}</main>
       </body>

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default async function PostsPage() {
   const res = await fetch(
     "https://jsonplaceholder.typicode.com/posts?_limit=10",
@@ -7,13 +9,17 @@ export default async function PostsPage() {
   return (
     <div>
       <h1 className="text-2xl font-bold mb-6">文章列表</h1>
-      <ul className="flex flex-col gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {posts.map((post) => (
-          <li key={post.id} className="p-4 border border-gray-200 rounded-lg">
+          <Link
+            key={post.id}
+            href={`/posts/${post.id}`}
+            className="p-4 border border-gray-200 rounded-lg hover:border-blue-400 transition"
+          >
             {post.title}
-          </li>
+          </Link>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

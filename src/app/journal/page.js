@@ -570,13 +570,15 @@ function PhaseBar({ days }) {
 }
 
 export default function LearningTracker() {
-  const [selected, setSelected] = useState(
-    days.findIndex((d) => d.status === "current") !== -1
-      ? days.findIndex((d) => d.status === "current")
-      : days.findIndex((d) => d.status === "upcoming"),
-  );
+  const [selected, setSelected] = useState(() => {
+    const currentIdx = days.findIndex((d) => d.status === "current");
+    if (currentIdx !== -1) return currentIdx;
+    const upcomingIdx = days.findIndex((d) => d.status === "upcoming");
+    if (upcomingIdx !== -1) return upcomingIdx;
+    return days.length - 1; // 都沒有就選最後一天
+  });
   const [filterWeek, setFilterWeek] = useState(null);
-  const [noteText, setNoteText] = useState(d.note || "");
+  const [noteText, setNoteText] = useState(days[selected]?.note || "");
   const [saved, setSaved] = useState(false);
   const [animKey, setAnimKey] = useState(0);
 

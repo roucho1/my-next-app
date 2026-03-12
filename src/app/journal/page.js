@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const days = [
   {
@@ -8,6 +8,7 @@ const days = [
     title: "環境建置",
     status: "done",
     date: "2026-03-05",
+    week: 1,
     topics: [
       "安裝 Node.js、VSCode",
       "用 Vite 建立第一個 React 專案",
@@ -21,6 +22,7 @@ const days = [
     title: "第一個 Component",
     status: "done",
     date: "2026-03-07",
+    week: 1,
     topics: [
       "JSX 語法基礎",
       "建立 Greeting.jsx（第一個自訂 component）",
@@ -34,6 +36,7 @@ const days = [
     title: "Props",
     status: "done",
     date: "2026-03-07",
+    week: 1,
     topics: [
       "Props 是什麼、為什麼需要它",
       "從父層傳資料給子 component",
@@ -47,6 +50,7 @@ const days = [
     title: "State & useState",
     status: "done",
     date: "2026-03-07",
+    week: 1,
     topics: [
       "useState Hook 基礎",
       "state vs props 差異",
@@ -61,6 +65,7 @@ const days = [
     title: "事件處理",
     status: "done",
     date: "2026-03-07",
+    week: 1,
     topics: [
       "onClick、onChange 事件",
       "controlled input",
@@ -75,6 +80,7 @@ const days = [
     title: "條件渲染 & 列表",
     status: "done",
     date: "2026-03-08",
+    week: 1,
     topics: [
       "三元運算子渲染",
       "&& 短路渲染",
@@ -89,6 +95,7 @@ const days = [
     title: "Week 1 整合練習",
     status: "done",
     date: "2026-03-08",
+    week: 1,
     topics: [
       "Todo List 整合實作",
       "filter 實作刪除功能",
@@ -103,6 +110,7 @@ const days = [
     title: "useEffect 基礎",
     status: "done",
     date: "2026-03-08",
+    week: 2,
     topics: [
       "useEffect 是什麼、為什麼需要它",
       "dependency array 的作用",
@@ -116,6 +124,7 @@ const days = [
     title: "串接 API",
     status: "done",
     date: "2026-03-08",
+    week: 2,
     topics: [
       "fetch 基礎",
       "用 useEffect + fetch 拿資料",
@@ -130,6 +139,7 @@ const days = [
     title: "自訂 Hook",
     status: "done",
     date: "2026-03-08",
+    week: 2,
     topics: [
       "為什麼要抽成自訂 Hook",
       "把 fetch 邏輯抽成 useFetch",
@@ -143,6 +153,7 @@ const days = [
     title: "React Router 基礎",
     status: "done",
     date: "2026-03-08",
+    week: 2,
     topics: [
       "安裝 react-router-dom",
       "建立多頁面（首頁、關於、404）",
@@ -157,6 +168,7 @@ const days = [
     title: "Router 進階",
     status: "done",
     date: "2026-03-08",
+    week: 2,
     topics: [
       "動態路由（/posts/:id）",
       "useParams 取得路由參數",
@@ -170,6 +182,7 @@ const days = [
     title: "表單進階 & 驗證",
     status: "done",
     date: "2026-03-08",
+    week: 2,
     topics: [
       "表單驗證邏輯",
       "錯誤訊息顯示",
@@ -184,6 +197,7 @@ const days = [
     title: "Week 2 整合練習",
     status: "done",
     date: "2026-03-08",
+    week: 2,
     topics: [
       "文章列表串接 API",
       "文章詳情動態路由",
@@ -198,6 +212,7 @@ const days = [
     title: "useContext 基礎",
     status: "done",
     date: "2026-03-09",
+    week: 3,
     topics: [
       "為什麼需要 useContext",
       "createContext、useContext 用法",
@@ -211,6 +226,7 @@ const days = [
     title: "useContext 實作",
     status: "done",
     date: "2026-03-09",
+    week: 3,
     topics: [
       "建立 ThemeContext 深色/淺色模式",
       "ThemeProvider 管理 state 和函式",
@@ -224,6 +240,7 @@ const days = [
     title: "async/await",
     status: "done",
     date: "2026-03-09",
+    week: 3,
     topics: [
       "async/await 改寫 fetch",
       "try/catch 錯誤處理",
@@ -237,6 +254,7 @@ const days = [
     title: "Tailwind CSS 基礎",
     status: "done",
     date: "2026-03-09",
+    week: 3,
     topics: [
       "安裝 Tailwind v4",
       "常用 class（排版、顏色、間距）",
@@ -250,6 +268,7 @@ const days = [
     title: "Tailwind 實戰",
     status: "done",
     date: "2026-03-09",
+    week: 3,
     topics: [
       "Navbar 樣式",
       "卡片式文章列表",
@@ -264,6 +283,7 @@ const days = [
     title: "環境變數 & 專案整理",
     status: "done",
     date: "2026-03-09",
+    week: 3,
     topics: [
       ".env 管理 API URL",
       "VITE_ 開頭才能讀取",
@@ -278,6 +298,7 @@ const days = [
     title: "部署到 Vercel",
     status: "done",
     date: "2026-03-10",
+    week: 3,
     topics: [
       "註冊 Vercel 連結 GitHub",
       "自動偵測 Vite 專案部署",
@@ -292,6 +313,7 @@ const days = [
     title: "Next.js 介紹 & 環境建置",
     status: "done",
     date: "2026-03-11",
+    week: 4,
     topics: [
       "Next.js 是什麼、CSR vs SSR 差別",
       "建立新專案 create-next-app",
@@ -305,6 +327,7 @@ const days = [
     title: "檔案路由系統",
     status: "done",
     date: "2026-03-11",
+    week: 4,
     topics: [
       "資料夾名稱 = URL 路徑",
       "page.js、layout.js 是什麼",
@@ -315,9 +338,10 @@ const days = [
   },
   {
     day: 24,
-    title: "Server Component & Client Component",
+    title: "Server & Client Component",
     status: "done",
     date: "2026-03-11",
+    week: 4,
     topics: [
       "Server Component 預設、伺服器執行",
       '"use client" 變成 Client Component',
@@ -331,6 +355,7 @@ const days = [
     title: "資料獲取",
     status: "done",
     date: "2026-03-11",
+    week: 4,
     topics: [
       "Server Component 直接 async/await fetch",
       "不需要 useEffect",
@@ -344,6 +369,7 @@ const days = [
     title: "動態路由 & generateStaticParams",
     status: "done",
     date: "2026-03-11",
+    week: 4,
     topics: [
       "[id] 資料夾建立動態路由",
       "params props 取得參數",
@@ -355,16 +381,25 @@ const days = [
   {
     day: 27,
     title: "Next.js API Route",
-    status: "current",
-    date: "",
-    topics: ["建立自己的 API endpoint", "route.ts 寫法", "前端呼叫自己的 API"],
-    note: "",
+    status: "done",
+    date: "2026-03-12",
+    week: 4,
+    topics: [
+      "建立 route.js 定義 API endpoint",
+      "函式名稱對應 HTTP method（GET/POST/DELETE）",
+      "NextResponse.json() 回傳資料與狀態碼",
+      "動態路由 [id] + 找不到時回 404",
+      "await params 取得路由參數（Next.js 15）",
+      "Client Component 用相對路徑 fetch('/api/posts') 呼叫自己的 API",
+    ],
+    note: "route.js 函式名稱就是 HTTP method，Next.js 自動對應。Next.js 15 的 params 是 Promise，要先 await 才能取值，直接 params.id 會拿到 undefined。Client Component 呼叫自己的 API 用相對路徑，Server Component 要用完整網址。",
   },
   {
     day: 28,
     title: "Week 4 整合練習",
-    status: "upcoming",
+    status: "current",
     date: "",
+    week: 4,
     topics: [
       "文章列表用 Next.js 重寫",
       "Server Component 串接 API",
@@ -374,311 +409,996 @@ const days = [
   },
 ];
 
-const statusConfig = {
-  done: {
-    label: "✓ 完成",
+const phases = [
+  {
+    id: "react",
+    label: "React",
+    weeks: [1, 2, 3],
+    color: "#61dafb",
+    accent: "#0ea5e9",
+  },
+  {
+    id: "nextjs",
+    label: "Next.js",
+    weeks: [4],
+    color: "#a78bfa",
+    accent: "#8b5cf6",
+  },
+  {
+    id: "fastapi",
+    label: "FastAPI",
+    weeks: [5, 6],
     color: "#4ade80",
-    bg: "rgba(74,222,128,0.12)",
-    border: "rgba(74,222,128,0.3)",
+    accent: "#22c55e",
+  },
+];
+
+const weekLabels = {
+  1: "React 基礎",
+  2: "Hooks & Router",
+  3: "Context & 部署",
+  4: "Next.js",
+  5: "FastAPI 基礎",
+  6: "整合作品集",
+};
+
+const STATUS = {
+  done: {
+    label: "完成",
+    icon: "✓",
+    color: "#4ade80",
+    bg: "rgba(74,222,128,0.08)",
+    border: "rgba(74,222,128,0.25)",
   },
   current: {
-    label: "► 進行中",
+    label: "進行中",
+    icon: "▶",
     color: "#facc15",
-    bg: "rgba(250,204,21,0.12)",
-    border: "rgba(250,204,21,0.4)",
+    bg: "rgba(250,204,21,0.08)",
+    border: "rgba(250,204,21,0.35)",
   },
   upcoming: {
-    label: "○ 待開始",
-    color: "#64748b",
-    bg: "rgba(100,116,139,0.06)",
-    border: "rgba(100,116,139,0.2)",
+    label: "待開始",
+    icon: "○",
+    color: "#475569",
+    bg: "rgba(71,85,105,0.04)",
+    border: "rgba(71,85,105,0.15)",
   },
 };
 
-export default function LearningJournal() {
-  const [selected, setSelected] = useState(26); // Day 27 index
-  const [note, setNote] = useState(days[2].note);
+function MiniMap({ days, selected, onSelect }) {
+  const weeks = [...new Set(days.map((d) => d.week))];
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+      {weeks.map((w) => (
+        <div key={w} style={{ display: "flex", alignItems: "center", gap: 6 }}>
+          <span
+            style={{
+              fontSize: 9,
+              color: "#334155",
+              width: 14,
+              textAlign: "right",
+              letterSpacing: "0.05em",
+            }}
+          >
+            W{w}
+          </span>
+          <div style={{ display: "flex", gap: 3 }}>
+            {days
+              .filter((d) => d.week === w)
+              .map((d, i) => {
+                const idx = days.indexOf(d);
+                const s = STATUS[d.status];
+                const isActive = selected === idx;
+                return (
+                  <button
+                    key={i}
+                    onClick={() => onSelect(idx)}
+                    title={`Day ${d.day}: ${d.title}`}
+                    style={{
+                      width: 20,
+                      height: 20,
+                      border: `1.5px solid ${isActive ? s.color : "transparent"}`,
+                      borderRadius: 3,
+                      background:
+                        d.status === "done"
+                          ? `${s.color}22`
+                          : d.status === "current"
+                            ? `${s.color}33`
+                            : "rgba(255,255,255,0.03)",
+                      cursor: "pointer",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: 8,
+                      color: isActive ? s.color : s.color + "88",
+                      transition: "all 0.15s",
+                      transform: isActive ? "scale(1.2)" : "scale(1)",
+                    }}
+                  >
+                    {d.day}
+                  </button>
+                );
+              })}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function PhaseBar({ days }) {
+  const completedCount = days.filter((d) => d.status === "done").length;
+  const currentIdx = days.findIndex((d) => d.status === "current");
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        gap: 0,
+        height: 4,
+        borderRadius: 2,
+        overflow: "hidden",
+        marginBottom: 4,
+      }}
+    >
+      {days.map((d, i) => {
+        const phase = phases.find((p) => p.weeks.includes(d.week));
+        const color =
+          d.status === "done"
+            ? phase?.color
+            : d.status === "current"
+              ? phase?.color
+              : "rgba(255,255,255,0.06)";
+        return (
+          <div
+            key={i}
+            style={{
+              flex: 1,
+              background: color,
+              opacity:
+                d.status === "done" ? 0.7 : d.status === "current" ? 1 : 1,
+              transition: "all 0.3s",
+            }}
+          />
+        );
+      })}
+    </div>
+  );
+}
+
+export default function LearningTracker() {
+  const [selected, setSelected] = useState(
+    days.findIndex((d) => d.status === "current") !== -1
+      ? days.findIndex((d) => d.status === "current")
+      : days.findIndex((d) => d.status === "upcoming"),
+  );
+  const [filterWeek, setFilterWeek] = useState(null);
+  const [noteText, setNoteText] = useState("");
   const [saved, setSaved] = useState(false);
+  const [animKey, setAnimKey] = useState(0);
+
+  const d = days[selected];
+  const cfg = STATUS[d.status];
+  const phase = phases.find((p) => p.weeks.includes(d.week));
 
   const completedCount = days.filter((d) => d.status === "done").length;
   const progress = (completedCount / days.length) * 100;
 
-  function handleSave() {
-    setSaved(true);
-    setTimeout(() => setSaved(false), 2000);
+  const visibleDays = filterWeek
+    ? days.filter((day) => day.week === filterWeek)
+    : days;
+
+  function selectDay(idx) {
+    setSelected(idx);
+    setAnimKey((k) => k + 1);
+    setSaved(false);
+    setNoteText(days[idx].note || "");
   }
 
-  const d = days[selected];
-  const cfg = statusConfig[d.status];
+  useEffect(() => {
+    setNoteText(d.note || "");
+  }, [selected]);
+
+  function handleSave() {
+    setSaved(true);
+    setTimeout(() => setSaved(false), 2500);
+  }
+
+  const prevDay = selected > 0 ? () => selectDay(selected - 1) : null;
+  const nextDay =
+    selected < days.length - 1 ? () => selectDay(selected + 1) : null;
 
   return (
     <div
       style={{
         minHeight: "100vh",
-        background: "#0a0f1a",
-        fontFamily: "'Courier New', monospace",
-        color: "#e2e8f0",
-        padding: "32px 24px",
-        boxSizing: "border-box",
+        background: "#060b14",
+        fontFamily: "'JetBrains Mono', 'Fira Code', 'Courier New', monospace",
+        color: "#cbd5e1",
+        display: "flex",
+        flexDirection: "column",
       }}
     >
-      {/* Header */}
-      <div style={{ maxWidth: 720, margin: "0 auto" }}>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Sora:wght@300;400;600;700&display=swap');
+        * { box-sizing: border-box; }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 2px; }
+        .day-btn:hover { transform: scale(1.05) !important; }
+        .nav-btn:hover { background: rgba(255,255,255,0.06) !important; }
+        @keyframes fadeSlide {
+          from { opacity: 0; transform: translateY(8px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.4; }
+        }
+        @keyframes scanline {
+          0% { transform: translateY(-100%); }
+          100% { transform: translateY(100vh); }
+        }
+        textarea:focus { outline: none; }
+        textarea::placeholder { color: #334155; }
+      `}</style>
+
+      {/* Scanline overlay */}
+      <div
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          pointerEvents: "none",
+          zIndex: 0,
+          overflow: "hidden",
+        }}
+      >
         <div
           style={{
-            display: "flex",
-            alignItems: "baseline",
-            gap: 12,
-            marginBottom: 4,
+            position: "absolute",
+            width: "100%",
+            height: "2px",
+            background:
+              "linear-gradient(180deg, transparent, rgba(100,200,255,0.03), transparent)",
+            animation: "scanline 8s linear infinite",
           }}
-        >
-          <span
-            style={{
-              fontSize: 11,
-              letterSpacing: "0.2em",
-              color: "#475569",
-              textTransform: "uppercase",
-            }}
-          >
-            學習日誌
-          </span>
-          <span style={{ color: "#334155" }}>—</span>
-          <span
-            style={{ fontSize: 11, color: "#475569", letterSpacing: "0.1em" }}
-          >
-            React → Next.js → FastAPI
-          </span>
-        </div>
-        <h1
+        />
+        {/* Grid texture */}
+        <div
           style={{
-            fontSize: 28,
-            fontWeight: 700,
-            color: "#f1f5f9",
-            margin: "0 0 24px",
-            letterSpacing: "-0.02em",
+            position: "absolute",
+            inset: 0,
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px)",
+            backgroundSize: "48px 48px",
           }}
-        >
-          React 學習 <span style={{ color: "#facc15" }}>進度追蹤</span>
-        </h1>
+        />
+      </div>
 
-        {/* Progress bar */}
-        <div style={{ marginBottom: 32 }}>
+      <div
+        style={{
+          position: "relative",
+          zIndex: 1,
+          maxWidth: 900,
+          margin: "0 auto",
+          width: "100%",
+          padding: "28px 20px 40px",
+        }}
+      >
+        {/* ── HEADER ── */}
+        <div style={{ marginBottom: 28 }}>
           <div
             style={{
               display: "flex",
-              justifyContent: "space-between",
-              marginBottom: 6,
-              fontSize: 11,
-              color: "#64748b",
+              alignItems: "center",
+              gap: 8,
+              marginBottom: 8,
             }}
           >
-            <span>整體進度</span>
-            <span style={{ color: "#4ade80" }}>
-              {completedCount} / {days.length} 天完成
-            </span>
-          </div>
-          <div style={{ height: 3, background: "#1e293b", borderRadius: 2 }}>
-            <div
-              style={{
-                height: "100%",
-                width: `${progress}%`,
-                background: "linear-gradient(90deg, #4ade80, #facc15)",
-                borderRadius: 2,
-                transition: "width 0.6s ease",
-              }}
-            />
-          </div>
-        </div>
-
-        {/* Day selector */}
-        <div
-          style={{
-            display: "flex",
-            gap: 8,
-            marginBottom: 28,
-            flexWrap: "wrap",
-          }}
-        >
-          {days.map((d, i) => {
-            const c = statusConfig[d.status];
-            const isActive = selected === i;
-            return (
-              <button
-                key={i}
-                onClick={() => setSelected(i)}
+            {phases.map((p) => (
+              <span
+                key={p.id}
                 style={{
-                  padding: "6px 14px",
-                  border: `1px solid ${isActive ? c.color : "rgba(255,255,255,0.08)"}`,
-                  borderRadius: 4,
-                  background: isActive ? c.bg : "transparent",
-                  color: isActive ? c.color : "#475569",
-                  cursor: "pointer",
-                  fontSize: 12,
-                  fontFamily: "inherit",
-                  letterSpacing: "0.05em",
-                  transition: "all 0.15s",
+                  fontSize: 10,
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  color: p.color,
+                  padding: "2px 8px",
+                  border: `1px solid ${p.color}44`,
+                  borderRadius: 2,
+                  fontFamily: "'JetBrains Mono', monospace",
                 }}
               >
-                D{d.day}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Day detail card */}
-        <div
-          style={{
-            border: `1px solid ${cfg.border}`,
-            borderRadius: 8,
-            background: cfg.bg,
-            padding: "24px 28px",
-            marginBottom: 20,
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "flex-start",
-              marginBottom: 16,
-            }}
-          >
-            <div>
-              <div
-                style={{
-                  fontSize: 11,
-                  color: "#475569",
-                  letterSpacing: "0.15em",
-                  marginBottom: 4,
-                }}
-              >
-                DAY {d.day} {d.date && `· ${d.date}`}
-              </div>
-              <div style={{ fontSize: 20, fontWeight: 700, color: "#f1f5f9" }}>
-                {d.title}
-              </div>
-            </div>
+                {p.label}
+              </span>
+            ))}
             <span
               style={{
-                fontSize: 11,
-                padding: "4px 10px",
-                border: `1px solid ${cfg.border}`,
-                borderRadius: 3,
-                color: cfg.color,
-                letterSpacing: "0.08em",
-                whiteSpace: "nowrap",
+                fontSize: 10,
+                color: "#1e293b",
+                marginLeft: "auto",
+                letterSpacing: "0.1em",
               }}
             >
-              {cfg.label}
+              → Vercel
             </span>
           </div>
 
-          {/* Topics */}
-          <div style={{ marginBottom: d.status !== "upcoming" ? 20 : 0 }}>
-            {d.topics.map((t, i) => (
-              <div
-                key={i}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "flex-end",
+              justifyContent: "space-between",
+              flexWrap: "wrap",
+              gap: 12,
+            }}
+          >
+            <div>
+              <h1
                 style={{
-                  display: "flex",
-                  gap: 10,
-                  alignItems: "flex-start",
-                  padding: "5px 0",
-                  borderBottom:
-                    i < d.topics.length - 1
-                      ? "1px solid rgba(255,255,255,0.04)"
-                      : "none",
-                  fontSize: 13,
-                  color: d.status === "upcoming" ? "#475569" : "#cbd5e1",
+                  fontFamily: "'Sora', sans-serif",
+                  fontSize: 26,
+                  fontWeight: 700,
+                  color: "#f8fafc",
+                  margin: 0,
+                  letterSpacing: "-0.03em",
+                  lineHeight: 1.2,
                 }}
               >
-                <span style={{ color: cfg.color, marginTop: 1, flexShrink: 0 }}>
-                  {d.status === "done"
-                    ? "✓"
-                    : d.status === "current"
-                      ? "›"
-                      : "·"}
-                </span>
-                {t}
-              </div>
-            ))}
-          </div>
-
-          {/* Note area — only for done/current */}
-          {d.status !== "upcoming" && (
-            <div>
-              <div
+                學習進度追蹤
+              </h1>
+              <p
                 style={{
+                  margin: "4px 0 0",
                   fontSize: 11,
                   color: "#475569",
-                  letterSpacing: "0.1em",
-                  marginBottom: 8,
+                  letterSpacing: "0.05em",
                 }}
               >
-                {d.status === "done" ? "學習筆記" : "當天心得（完成後填寫）"}
-              </div>
-              {d.status === "done" ? (
-                <div
-                  style={{ fontSize: 13, color: "#94a3b8", lineHeight: 1.6 }}
-                >
-                  {d.note}
-                </div>
-              ) : (
-                <div>
-                  <textarea
-                    value={note}
-                    onChange={(e) => setNote(e.target.value)}
-                    placeholder="今天學了什麼？有什麼卡住的地方？"
-                    rows={3}
+                Day {completedCount} / {days.length} &nbsp;·&nbsp;{" "}
+                {Math.round(progress)}% 完成
+              </p>
+            </div>
+
+            {/* Stats */}
+            <div style={{ display: "flex", gap: 16 }}>
+              {[
+                { label: "已完成", val: completedCount, color: "#4ade80" },
+                {
+                  label: "進行中",
+                  val: days.filter((d) => d.status === "current").length,
+                  color: "#facc15",
+                },
+                {
+                  label: "待開始",
+                  val: days.filter((d) => d.status === "upcoming").length,
+                  color: "#475569",
+                },
+              ].map((s) => (
+                <div key={s.label} style={{ textAlign: "center" }}>
+                  <div
                     style={{
-                      width: "100%",
-                      background: "rgba(0,0,0,0.3)",
-                      border: "1px solid rgba(250,204,21,0.2)",
-                      borderRadius: 4,
-                      color: "#e2e8f0",
-                      fontFamily: "inherit",
-                      fontSize: 13,
-                      padding: "10px 12px",
-                      resize: "vertical",
-                      boxSizing: "border-box",
-                      outline: "none",
-                    }}
-                  />
-                  <button
-                    onClick={handleSave}
-                    style={{
-                      marginTop: 8,
-                      padding: "6px 16px",
-                      background: saved
-                        ? "rgba(74,222,128,0.15)"
-                        : "rgba(250,204,21,0.1)",
-                      border: `1px solid ${saved ? "rgba(74,222,128,0.4)" : "rgba(250,204,21,0.3)"}`,
-                      color: saved ? "#4ade80" : "#facc15",
-                      borderRadius: 3,
-                      cursor: "pointer",
-                      fontSize: 12,
-                      fontFamily: "inherit",
-                      letterSpacing: "0.08em",
-                      transition: "all 0.2s",
+                      fontSize: 20,
+                      fontWeight: 700,
+                      color: s.color,
+                      lineHeight: 1,
+                      fontFamily: "'Sora', sans-serif",
                     }}
                   >
-                    {saved ? "✓ 已記錄" : "儲存心得"}
+                    {s.val}
+                  </div>
+                  <div
+                    style={{
+                      fontSize: 9,
+                      color: "#334155",
+                      letterSpacing: "0.1em",
+                      marginTop: 2,
+                    }}
+                  >
+                    {s.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Progress bar */}
+          <div style={{ marginTop: 16 }}>
+            <PhaseBar days={days} />
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                marginTop: 6,
+              }}
+            >
+              {phases.map((p) => (
+                <div
+                  key={p.id}
+                  style={{ display: "flex", alignItems: "center", gap: 4 }}
+                >
+                  <div
+                    style={{
+                      width: 6,
+                      height: 6,
+                      borderRadius: "50%",
+                      background: p.color,
+                    }}
+                  />
+                  <span
+                    style={{
+                      fontSize: 9,
+                      color: p.color + "99",
+                      letterSpacing: "0.1em",
+                    }}
+                  >
+                    {p.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* ── MAIN LAYOUT ── */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 220px",
+            gap: 20,
+            alignItems: "start",
+          }}
+        >
+          {/* LEFT: Day detail */}
+          <div>
+            {/* Week filter tabs */}
+            <div
+              style={{
+                display: "flex",
+                gap: 4,
+                marginBottom: 14,
+                flexWrap: "wrap",
+              }}
+            >
+              <button
+                onClick={() => setFilterWeek(null)}
+                style={{
+                  padding: "4px 12px",
+                  fontSize: 10,
+                  letterSpacing: "0.1em",
+                  border: `1px solid ${filterWeek === null ? "#475569" : "rgba(255,255,255,0.06)"}`,
+                  borderRadius: 3,
+                  background:
+                    filterWeek === null ? "rgba(71,85,105,0.2)" : "transparent",
+                  color: filterWeek === null ? "#94a3b8" : "#334155",
+                  cursor: "pointer",
+                  fontFamily: "inherit",
+                }}
+              >
+                ALL
+              </button>
+              {[...new Set(days.map((d) => d.week))].map((w) => {
+                const ph = phases.find((p) => p.weeks.includes(w));
+                return (
+                  <button
+                    key={w}
+                    onClick={() => setFilterWeek(filterWeek === w ? null : w)}
+                    style={{
+                      padding: "4px 12px",
+                      fontSize: 10,
+                      letterSpacing: "0.1em",
+                      border: `1px solid ${filterWeek === w ? ph?.color + "88" : "rgba(255,255,255,0.06)"}`,
+                      borderRadius: 3,
+                      background:
+                        filterWeek === w ? ph?.color + "18" : "transparent",
+                      color: filterWeek === w ? ph?.color : "#334155",
+                      cursor: "pointer",
+                      fontFamily: "inherit",
+                    }}
+                  >
+                    W{w}
                   </button>
+                );
+              })}
+            </div>
+
+            {/* Day grid */}
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: 5,
+                marginBottom: 20,
+              }}
+            >
+              {visibleDays.map((day) => {
+                const idx = days.indexOf(day);
+                const s = STATUS[day.status];
+                const ph = phases.find((p) => p.weeks.includes(day.week));
+                const isActive = selected === idx;
+                return (
+                  <button
+                    key={idx}
+                    className="day-btn"
+                    onClick={() => selectDay(idx)}
+                    style={{
+                      width: 42,
+                      height: 42,
+                      border: `1.5px solid ${isActive ? ph?.color || s.color : day.status === "done" ? "rgba(255,255,255,0.08)" : "rgba(255,255,255,0.04)"}`,
+                      borderRadius: 5,
+                      background: isActive
+                        ? `${ph?.color || s.color}20`
+                        : day.status === "done"
+                          ? "rgba(255,255,255,0.03)"
+                          : "transparent",
+                      color: isActive
+                        ? ph?.color || s.color
+                        : day.status === "done"
+                          ? "#64748b"
+                          : "#2d3748",
+                      cursor: "pointer",
+                      fontFamily: "'JetBrains Mono', monospace",
+                      fontSize: 11,
+                      fontWeight: isActive ? 700 : 400,
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      transition: "all 0.12s",
+                      transform: isActive ? "scale(1.08)" : "scale(1)",
+                      position: "relative",
+                    }}
+                  >
+                    <span
+                      style={{ fontSize: 8, color: "inherit", opacity: 0.6 }}
+                    >
+                      D
+                    </span>
+                    <span style={{ lineHeight: 1 }}>{day.day}</span>
+                    {day.status === "current" && (
+                      <div
+                        style={{
+                          position: "absolute",
+                          top: 3,
+                          right: 3,
+                          width: 4,
+                          height: 4,
+                          borderRadius: "50%",
+                          background: "#facc15",
+                          animation: "pulse 1.5s ease-in-out infinite",
+                        }}
+                      />
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Detail card */}
+            <div
+              key={animKey}
+              style={{
+                border: `1px solid ${cfg.border}`,
+                borderRadius: 8,
+                background: cfg.bg,
+                padding: "22px 24px",
+                animation: "fadeSlide 0.25s ease-out forwards",
+                position: "relative",
+                overflow: "hidden",
+              }}
+            >
+              {/* Phase accent line */}
+              <div
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: 2,
+                  background: `linear-gradient(90deg, ${phase?.color || cfg.color}88, transparent)`,
+                }}
+              />
+
+              {/* Card header */}
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "flex-start",
+                  marginBottom: 18,
+                }}
+              >
+                <div>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 8,
+                      marginBottom: 5,
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontSize: 10,
+                        letterSpacing: "0.2em",
+                        color: phase?.color || "#475569",
+                        fontFamily: "'JetBrains Mono', monospace",
+                      }}
+                    >
+                      DAY {d.day}
+                    </span>
+                    {d.date && (
+                      <span style={{ fontSize: 10, color: "#334155" }}>
+                        · {d.date}
+                      </span>
+                    )}
+                    <span
+                      style={{
+                        fontSize: 9,
+                        padding: "2px 7px",
+                        border: `1px solid ${cfg.border}`,
+                        borderRadius: 2,
+                        color: cfg.color,
+                        letterSpacing: "0.08em",
+                      }}
+                    >
+                      {cfg.icon} {cfg.label}
+                    </span>
+                  </div>
+                  <h2
+                    style={{
+                      fontFamily: "'Sora', sans-serif",
+                      fontSize: 18,
+                      fontWeight: 700,
+                      color: "#f1f5f9",
+                      margin: 0,
+                      letterSpacing: "-0.02em",
+                    }}
+                  >
+                    {d.title}
+                  </h2>
+                </div>
+
+                {/* Nav arrows */}
+                <div style={{ display: "flex", gap: 4 }}>
+                  <button
+                    className="nav-btn"
+                    onClick={prevDay}
+                    disabled={!prevDay}
+                    style={{
+                      width: 28,
+                      height: 28,
+                      border: "1px solid rgba(255,255,255,0.08)",
+                      borderRadius: 4,
+                      background: "transparent",
+                      color: prevDay ? "#64748b" : "#1e293b",
+                      cursor: prevDay ? "pointer" : "default",
+                      fontSize: 12,
+                      fontFamily: "inherit",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      transition: "all 0.15s",
+                    }}
+                  >
+                    ‹
+                  </button>
+                  <button
+                    className="nav-btn"
+                    onClick={nextDay}
+                    disabled={!nextDay}
+                    style={{
+                      width: 28,
+                      height: 28,
+                      border: "1px solid rgba(255,255,255,0.08)",
+                      borderRadius: 4,
+                      background: "transparent",
+                      color: nextDay ? "#64748b" : "#1e293b",
+                      cursor: nextDay ? "pointer" : "default",
+                      fontSize: 12,
+                      fontFamily: "inherit",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      transition: "all 0.15s",
+                    }}
+                  >
+                    ›
+                  </button>
+                </div>
+              </div>
+
+              {/* Topics */}
+              <div
+                style={{
+                  marginBottom: d.note || d.status === "current" ? 18 : 0,
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: 9,
+                    color: "#334155",
+                    letterSpacing: "0.15em",
+                    marginBottom: 8,
+                    textTransform: "uppercase",
+                  }}
+                >
+                  學習主題
+                </div>
+                {d.topics.map((t, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      display: "flex",
+                      gap: 10,
+                      alignItems: "flex-start",
+                      padding: "6px 0",
+                      borderBottom:
+                        i < d.topics.length - 1
+                          ? "1px solid rgba(255,255,255,0.04)"
+                          : "none",
+                      fontSize: 12.5,
+                      color: d.status === "upcoming" ? "#334155" : "#94a3b8",
+                      lineHeight: 1.4,
+                    }}
+                  >
+                    <span
+                      style={{
+                        color: phase?.color || cfg.color,
+                        flexShrink: 0,
+                        marginTop: 1,
+                        fontSize: 10,
+                      }}
+                    >
+                      {d.status === "done"
+                        ? "✓"
+                        : d.status === "current"
+                          ? "›"
+                          : "·"}
+                    </span>
+                    {t}
+                  </div>
+                ))}
+              </div>
+
+              {/* Note */}
+              {d.status !== "upcoming" && (
+                <div>
+                  <div
+                    style={{
+                      fontSize: 9,
+                      color: "#334155",
+                      letterSpacing: "0.15em",
+                      marginBottom: 8,
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    {d.status === "done" ? "學習筆記" : "當天心得"}
+                  </div>
+                  {d.status === "done" ? (
+                    <div
+                      style={{
+                        fontSize: 12.5,
+                        color: "#64748b",
+                        lineHeight: 1.7,
+                        padding: "12px 14px",
+                        background: "rgba(0,0,0,0.2)",
+                        borderRadius: 4,
+                        borderLeft: `2px solid ${phase?.color || "#475569"}44`,
+                      }}
+                    >
+                      {d.note}
+                    </div>
+                  ) : (
+                    <div>
+                      <textarea
+                        value={noteText}
+                        onChange={(e) => setNoteText(e.target.value)}
+                        placeholder="今天學了什麼？哪裡卡住了？有什麼收穫？"
+                        rows={4}
+                        style={{
+                          width: "100%",
+                          background: "rgba(0,0,0,0.3)",
+                          border: `1px solid ${cfg.border}`,
+                          borderRadius: 4,
+                          color: "#e2e8f0",
+                          fontFamily: "'JetBrains Mono', monospace",
+                          fontSize: 12,
+                          padding: "10px 12px",
+                          resize: "vertical",
+                          lineHeight: 1.6,
+                        }}
+                      />
+                      <button
+                        onClick={handleSave}
+                        style={{
+                          marginTop: 8,
+                          padding: "6px 18px",
+                          background: saved
+                            ? "rgba(74,222,128,0.12)"
+                            : "rgba(250,204,21,0.08)",
+                          border: `1px solid ${saved ? "rgba(74,222,128,0.35)" : "rgba(250,204,21,0.25)"}`,
+                          color: saved ? "#4ade80" : "#facc15",
+                          borderRadius: 3,
+                          cursor: "pointer",
+                          fontSize: 11,
+                          fontFamily: "'JetBrains Mono', monospace",
+                          letterSpacing: "0.08em",
+                          transition: "all 0.2s",
+                        }}
+                      >
+                        {saved ? "✓ 已記錄" : "儲存心得"}
+                      </button>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
-          )}
+          </div>
+
+          {/* RIGHT: Mini map + Phase summary */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            {/* Mini map */}
+            <div
+              style={{
+                border: "1px solid rgba(255,255,255,0.06)",
+                borderRadius: 8,
+                background: "rgba(255,255,255,0.02)",
+                padding: "16px",
+              }}
+            >
+              <div
+                style={{
+                  fontSize: 9,
+                  color: "#334155",
+                  letterSpacing: "0.15em",
+                  marginBottom: 10,
+                  textTransform: "uppercase",
+                }}
+              >
+                全覽
+              </div>
+              <MiniMap days={days} selected={selected} onSelect={selectDay} />
+            </div>
+
+            {/* Roadmap */}
+            <div
+              style={{
+                border: "1px solid rgba(255,255,255,0.06)",
+                borderRadius: 8,
+                background: "rgba(255,255,255,0.02)",
+                padding: "16px",
+              }}
+            >
+              <div
+                style={{
+                  fontSize: 9,
+                  color: "#334155",
+                  letterSpacing: "0.15em",
+                  marginBottom: 12,
+                  textTransform: "uppercase",
+                }}
+              >
+                學習路線
+              </div>
+              {phases.map((p) => {
+                const phaseDays = days.filter((d) => p.weeks.includes(d.week));
+                const phaseCompleted = phaseDays.filter(
+                  (d) => d.status === "done",
+                ).length;
+                const phaseProgress = (phaseCompleted / phaseDays.length) * 100;
+                const hasStarted =
+                  phaseCompleted > 0 ||
+                  phaseDays.some((d) => d.status === "current");
+                return (
+                  <div key={p.id} style={{ marginBottom: 12 }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        marginBottom: 5,
+                      }}
+                    >
+                      <span
+                        style={{
+                          fontSize: 11,
+                          color: hasStarted ? p.color : "#334155",
+                          fontWeight: 600,
+                        }}
+                      >
+                        {p.label}
+                      </span>
+                      <span style={{ fontSize: 10, color: "#334155" }}>
+                        {phaseCompleted}/{phaseDays.length}
+                      </span>
+                    </div>
+                    <div
+                      style={{
+                        height: 3,
+                        background: "rgba(255,255,255,0.05)",
+                        borderRadius: 2,
+                      }}
+                    >
+                      <div
+                        style={{
+                          height: "100%",
+                          width: `${phaseProgress}%`,
+                          background: p.color,
+                          borderRadius: 2,
+                          transition: "width 0.5s ease",
+                          opacity: hasStarted ? 0.8 : 0.2,
+                        }}
+                      />
+                    </div>
+                  </div>
+                );
+              })}
+              <div
+                style={{
+                  marginTop: 14,
+                  paddingTop: 12,
+                  borderTop: "1px solid rgba(255,255,255,0.04)",
+                  fontSize: 9,
+                  color: "#1e3a5f",
+                  textAlign: "center",
+                  letterSpacing: "0.1em",
+                }}
+              >
+                → FastAPI → Portfolio → Vercel
+              </div>
+            </div>
+
+            {/* Week label */}
+            <div
+              style={{
+                border: "1px solid rgba(255,255,255,0.04)",
+                borderRadius: 8,
+                padding: "14px 16px",
+                background: `${phase?.color || "#475569"}08`,
+              }}
+            >
+              <div
+                style={{
+                  fontSize: 9,
+                  color: "#334155",
+                  letterSpacing: "0.15em",
+                  marginBottom: 6,
+                  textTransform: "uppercase",
+                }}
+              >
+                當前章節
+              </div>
+              <div
+                style={{
+                  fontSize: 13,
+                  color: phase?.color || "#475569",
+                  fontWeight: 600,
+                }}
+              >
+                Week {d.week}
+              </div>
+              <div style={{ fontSize: 11, color: "#475569", marginTop: 2 }}>
+                {weekLabels[d.week] || "—"}
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Footer */}
         <div
           style={{
-            fontSize: 11,
-            color: "#334155",
+            marginTop: 28,
             textAlign: "center",
+            fontSize: 10,
+            color: "#1e293b",
             letterSpacing: "0.1em",
           }}
         >
-          目標：React → Next.js → FastAPI → 作品集部署 Vercel
+          React ─── Next.js ─── FastAPI ─── Portfolio ─── Vercel
         </div>
       </div>
     </div>

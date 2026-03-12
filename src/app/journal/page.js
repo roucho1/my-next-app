@@ -412,16 +412,17 @@ const days = [
   {
     day: 29,
     title: "FastAPI 環境建置",
-    status: "current",
-    date: "",
+    status: "done",
+    date: "2026-03-12",
     week: 5,
     topics: [
       "安裝 Python、FastAPI、uvicorn",
       "建立第一個 FastAPI 專案",
-      "跑起 dev server",
+      "uvicorn main:app --reload 啟動 server",
       "認識自動產生的 API 文件（/docs）",
+      "虛擬環境 venv 隔離專案套件",
     ],
-    note: "",
+    note: "uvicorn main:app 中 main 是檔名、app 是 FastAPI 實例名稱。虛擬環境類似 Node.js 的 node_modules，讓每個專案套件獨立不衝突。/docs 是 FastAPI 自動產生的 API 文件，可以直接在上面測試。",
   },
   {
     day: 30,

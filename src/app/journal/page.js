@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const days = [
   {
@@ -397,15 +397,17 @@ const days = [
   {
     day: 28,
     title: "Week 4 整合練習",
-    status: "current",
-    date: "",
+    status: "done",
+    date: "2026-03-12",
     week: 4,
     topics: [
-      "文章列表用 Next.js 重寫",
-      "Server Component 串接 API",
-      "部署到 Vercel",
+      "posts 頁面改用自己的 /api/posts（取代 JSONPlaceholder）",
+      "環境變數 NEXT_PUBLIC_BASE_URL 處理 Server Component fetch 網址",
+      "Server Component 不能用相對路徑，要用完整網址",
+      "404 處理：res.ok 為 false 時提早 return",
+      "拿掉 generateStaticParams，改為純 SSR",
     ],
-    note: "",
+    note: "Server Component fetch 自己的 API 要用完整網址，相對路徑只在 Client Component 有效。環境變數 NEXT_PUBLIC_BASE_URL 讓本機和部署環境都能正確運作，部署到 Vercel 後要記得在 Vercel 設定對應的環境變數。",
   },
 ];
 
@@ -574,7 +576,7 @@ export default function LearningTracker() {
       : days.findIndex((d) => d.status === "upcoming"),
   );
   const [filterWeek, setFilterWeek] = useState(null);
-  const [noteText, setNoteText] = useState("");
+  const [noteText, setNoteText] = useState(d.note || "");
   const [saved, setSaved] = useState(false);
   const [animKey, setAnimKey] = useState(0);
 
@@ -595,10 +597,6 @@ export default function LearningTracker() {
     setSaved(false);
     setNoteText(days[idx].note || "");
   }
-
-  useEffect(() => {
-    setNoteText(d.note || "");
-  }, [selected]);
 
   function handleSave() {
     setSaved(true);
@@ -1194,7 +1192,7 @@ export default function LearningTracker() {
                       {d.note}
                     </div>
                   ) : (
-                    <div>
+                    <div key={selected}>
                       <textarea
                         value={noteText}
                         onChange={(e) => setNoteText(e.target.value)}

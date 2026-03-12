@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
           <Link href="/">首頁</Link>
           <Link href="/about">關於我</Link>
           <Link href="/posts">文章</Link>
-          <Link href="/counter">計數測試</Link>
+          <Link href="/journal">學習日誌</Link>
         </nav>
         <main className="max-w-3xl mx-auto p-8">{children}</main>
       </body>

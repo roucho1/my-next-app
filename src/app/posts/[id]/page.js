@@ -1,18 +1,12 @@
-export async function generateStaticParams() {
-  const posts = await fetch("https://jsonplaceholder.typicode.com/posts").then(
-    (r) => r.json(),
-  );
-
-  return posts.map((post) => ({
-    id: String(post.id),
-  }));
-}
-
 export default async function PostDetail({ params }) {
   const { id } = await params;
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/posts/${id}`,
+  );
   const post = await res.json();
-
+  if (!res.ok) {
+    return <div>找不到文章</div>;
+  }
   return (
     <div>
       <h1 className="text-2xl font-bold mb-4">{post.title}</h1>

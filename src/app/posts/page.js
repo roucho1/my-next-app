@@ -1,9 +1,7 @@
 import Link from "next/link";
 
 export default async function PostsPage() {
-  const res = await fetch(
-    "https://jsonplaceholder.typicode.com/posts?_limit=10",
-  );
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/posts`);
   const posts = await res.json();
 
   return (

@@ -427,11 +427,17 @@ const days = [
   {
     day: 30,
     title: "路由基礎",
-    status: "upcoming",
-    date: "",
+    status: "done",
+    date: "2026-03-13",
     week: 5,
-    topics: ["GET / POST 路由", "回傳 JSON", "路由函式基礎"],
-    note: "",
+    topics: [
+      "練習有帶參數與沒帶參數的 GET 路由",
+      "測試 POST 傳送資料新增",
+      "FastAPI 型別標註自動驗證，不用自己判斷 type",
+      "@app.get() decorator 負責註冊路由，function 名稱不影響路由行為",
+      "return dict FastAPI 自動轉 JSON，不需要手動 NextResponse.json()",
+    ],
+    note: "FastAPI 參數只要加 : int，傳錯型別就自動回錯誤訊息，不用自己寫驗證邏輯。decorator 的概念跟 Next.js route.js 用函式名稱對應 method 不同，FastAPI 用 @app.get/@app.post 對應，function 名稱只是方便閱讀。",
   },
   {
     day: 31,

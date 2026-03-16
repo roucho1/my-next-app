@@ -587,11 +587,18 @@ const days = [
   {
     day: 41,
     title: "整合測試 & 除錯",
-    status: "upcoming",
-    date: "",
+    status: "done",
+    date: "2026-03-16",
     week: 6,
-    topics: ["前後端整合測試", "常見錯誤排查", "效能確認"],
-    note: "",
+    topics: [
+      "SQLite 無法在 Render 上持久化，每次重新部署資料就消失",
+      "換成 PostgreSQL 解決 redeploy 後資料重製的問題",
+      "local 繼續使用 SQLite，不需要額外安裝 PostgreSQL，開發環境比較簡單",
+      "os.environ.get('DATABASE_URL', 'sqlite:///./posts.db') 用環境變數判斷讓本機用 SQLite，Render 用 PostgreSQL",
+      "startswith() 判斷連線字串類型，SQLite 才加 connect_args",
+      "Render Free 的 PostgreSQL 有 90 天限制",
+    ],
+    note: "ORM 的好處在這裡體現了，SQLite 換成 PostgreSQL 只需要改連線字串，models.py 和路由完全不用動。Internal URL 只能在 Render 內部用，External URL 可以從外部連線管理資料庫。",
   },
   {
     day: 42,

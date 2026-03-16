@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export default async function PostsPage() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/posts`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts`);
   const posts = await res.json();
 
   return (

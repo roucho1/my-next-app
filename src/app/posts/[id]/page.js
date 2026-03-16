@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 export default async function PostDetail({ params }) {
   const { id } = await params;
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts/${id}`);

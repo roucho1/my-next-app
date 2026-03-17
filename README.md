@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# my-next-app
 
-## Getting Started
+使用 next.js 建立的學習demo畫面。
 
-First, run the development server:
+## 技術棧
+
+- Next.js
+- React
+- Javascript
+- Tailwind CSS
+
+## 本機啟動
 
 ```bash
+# 安裝套件
+npm install
+
+# 啟動伺服器
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 線上網址
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+https://my-next-app-theta-tawny.vercel.app/
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+> API呼叫部分由於 Render Free 方案閒置後會 spin down，第一次請求可能需要等待 50 秒以上。
 
-## Learn More
+## 頁面路由
 
-To learn more about Next.js, take a look at the following resources:
+| 路徑        | 說明     |
+| ----------- | -------- |
+| /           | 首頁     |
+| /about      | 關於我   |
+| /posts      | 文章列表 |
+| /posts/[id] | 文章詳情 |
+| /journal    | 學習日誌 |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 環境變數.env.local
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| 變數名稱            | 說明              |
+| ------------------- | ----------------- |
+| NEXT_PUBLIC_API_URL | FastAPI 的 domain |
